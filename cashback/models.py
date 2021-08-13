@@ -36,7 +36,7 @@ class Cashback(models.Model):
     Args:
         models ([type]): [description]
     """
-    customer = models.ForeignKey(Customer, null=True, blank=True)
-    product = models.ForeignKey(Product, null=True, blank=True)
+    customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
     sold_at = models.DateTimeField(auto_now_add=True)
     total = models.IntegerField(null=True, blank=True)
